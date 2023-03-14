@@ -1,0 +1,8 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-requests
+python-decouple==3.4
+rpamaker
+boto3
+rpaframework
+O365
