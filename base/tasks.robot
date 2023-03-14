@@ -28,7 +28,7 @@ Enviar por vidsigner
     RPA.Browser.Selenium.Input Text    id=email    ${Email_Vid}
     RPA.Browser.Selenium.Input Text    id=password    ${Pass_Vid}
     BuiltIn.Sleep    5  
-    RPA.Browser.Selenium.Click Element    xpath=//input[@value='Iniciar sesión']
+    RPA.Browser.Selenium.Click Element    xpath=//input[@value='Iniciar sesi']
     RPA.Browser.Selenium.Wait Until Element Is Visible    css=.fa-share-square
     RPA.Browser.Selenium.Click Element    css=.fa-share-square
     RPA.Browser.Selenium.Wait Until Element Is Visible    css=.modal-content:nth-child(1) .btn
