@@ -8,8 +8,6 @@ Library    RPA.PDF
 Library    String
 Library    RPA.Browser.Selenium
 Library    RPA.Desktop
-Library         libraries/credentials.py
-Library        libraries/smtp.py
 Library    libraries/o365.py
 
 *** Keywords ***
