@@ -14,7 +14,7 @@ def credenciales_o365 (ruta:str, user:str, key:str, tenant:str, email:str):
         inbox = mailbox.inbox_folder()
         inbox_bender = inbox.get_folder(folder_name='CERTIFICADOS')
         print (inbox_bender)
-        for message in inbox_bender.get_messages(limit=10, download_attachments=True):
+        for message in inbox_bender.get_messages(limit=30, download_attachments=True):
             if not message.is_read:
                 print ('no leido')
                 print (message.subject)
