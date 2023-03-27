@@ -29,7 +29,7 @@ Enviar por vidsigner
     RPA.Browser.Selenium.Click Element    xpath=//input[@type='submit']
     RPA.Browser.Selenium.Wait Until Element Is Visible    css=.fa-share-square
     RPA.Browser.Selenium.Click Element    css=.fa-share-square
-    RPA.Browser.Selenium.Wait Until Element Is Visible    css=.modal-content:nth-child(1) .btn
+    RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//button[contains(.,'Configurar envío simple')]
     RPA.Browser.Selenium.Click Element   css=.modal-content:nth-child(1) .btn
     RPA.Browser.Selenium.Choose File    name=files[]    ${CURDIR}${/}Certificado_de_aprovechamiento-ESTELA_MARIA_RAINERO_GOMEZ.pdf
     RPA.Browser.Selenium.Wait Until Element Is Visible    name=editShortDesc
