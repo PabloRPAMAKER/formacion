@@ -25,7 +25,7 @@ Enviar por vidsigner
     Open Chrome Browser    https://limcamar.send2sign.net    maximized=${True}
     RPA.Browser.Selenium.Input Text    id=email    ${Email_Vid}
     RPA.Browser.Selenium.Input Text    id=password    ${Pass_Vid}
-    BuiltIn.Sleep    5  
+    BuiltIn.Sleep    35  
     RPA.Browser.Selenium.Click Element    xpath=//input[@type='submit']
     RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//li[@id='uppyModal']/a/div/span[2]/i
     RPA.Browser.Selenium.Click Element    xpath=//li[@id='uppyModal']/a/div/span[2]/i
