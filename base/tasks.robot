@@ -9,6 +9,7 @@ Library    String
 Library    RPA.Browser.Selenium
 Library    RPA.Desktop
 Library    libraries/o365.py
+Library    OperatingSystem
 
 *** Keywords ***
 Leer PDF Y Extrae DNI
@@ -51,6 +52,8 @@ Enviar por vidsigner
 
 *** Tasks ***
 Principal
+    ${email}    Get Environment Variable        email
+    Log     ${email}
     ${documento}=    Credenciales O365     ${CURDIR}    ${user}    ${key}    ${tennant}    ${email}
     ${DNI}=    Leer PDF Y Extrae DNI    Certificado_de_aprovechamiento-ESTELA_MARIA_RAINERO_GOMEZ.pdf
     Enviar por vidsigner    ${DNI}
