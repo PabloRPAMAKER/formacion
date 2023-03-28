@@ -26,7 +26,7 @@ Enviar por vidsigner
     Open Chrome Browser    https://limcamar.send2sign.net    maximized=${True}
     RPA.Browser.Selenium.Input Text    id=email    ${Email_Vid}
     RPA.Browser.Selenium.Input Text    id=password    ${Pass_Vid}
-    BuiltIn.Sleep    5  
+    RPA.Browser.Selenium.Wait Until Element Is Visible  xpath=//input[@value='Iniciar sesión']  55
     RPA.Browser.Selenium.Click Element    xpath=//input[@value='Iniciar sesión']
     RPA.Browser.Selenium.Wait Until Element Is Visible    css=.fa-share-square    55
     RPA.Browser.Selenium.Click Element    css=.fa-share-square
