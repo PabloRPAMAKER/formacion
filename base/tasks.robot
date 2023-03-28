@@ -22,32 +22,33 @@ Leer PDF Y Extrae DNI
     Log    ${DNI}
     [Return]    ${DNI}
 Enviar por vidsigner
-    [Arguments]    ${DNI}   ${Email_Vid}    ${Pass_Vid}
+    [Arguments]    ${DNI}    ${Email_Vid}    ${Pass_Vid}
     Open Chrome Browser    https://limcamar.send2sign.net    maximized=${True}
     RPA.Browser.Selenium.Input Text    id=email    ${Email_Vid}
     RPA.Browser.Selenium.Input Text    id=password    ${Pass_Vid}
-    BuiltIn.Sleep    35  
-    RPA.Browser.Selenium.Click Element    xpath=//input[@type='submit']
-    RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//li[@id='uppyModal']/a/div/span[2]/i
-    RPA.Browser.Selenium.Click Element    xpath=//li[@id='uppyModal']/a/div/span[2]/i
-    RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//button[contains(.,'Configurar envío simple')]
-    RPA.Browser.Selenium.Click Element   xpath=//button[contains(.,'Configurar envío simple')]
+    BuiltIn.Sleep    5  
+    RPA.Browser.Selenium.Click Element    xpath=//input[@value='Iniciar sesión']
+    RPA.Browser.Selenium.Wait Until Element Is Visible    css=.fa-share-square    55
+    RPA.Browser.Selenium.Click Element    css=.fa-share-square
+    RPA.Browser.Selenium.Wait Until Element Is Visible    css=.modal-content:nth-child(1) .btn    55
+    RPA.Browser.Selenium.Click Element   css=.modal-content:nth-child(1) .btn
     RPA.Browser.Selenium.Choose File    name=files[]    ${CURDIR}${/}Certificado_de_aprovechamiento-ESTELA_MARIA_RAINERO_GOMEZ.pdf
-    RPA.Browser.Selenium.Wait Until Element Is Visible    name=editShortDesc
+    RPA.Browser.Selenium.Wait Until Element Is Visible    name=editShortDesc    55
     RPA.Browser.Selenium.Input Text    name=editShortDesc    ${DNI}
     RPA.Browser.Selenium.Input Text    xpath=/html/body/div[1]/div[3]/div[3]/div/div/div/div[1]/div/div[4]/div/section[1]/form/div[2]/div[4]/div[1]/textarea       CERTIFICADO FORMACION
     RPA.Browser.Selenium.Select From List By Index     xpath=//*[contains(@id, 'editTemplate')]   1
-    RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//*[contains(@id, 'btn-plus-sig')]
+    RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//*[contains(@id, 'btn-plus-sig')]    55
     RPA.Browser.Selenium.Click Element    xpath=//*[contains(@id, 'btn-plus-sig')]
     #RPA.Browser.Selenium.Click Element   css=.fa-plus-circle
     RPA.Browser.Selenium.Click Element    id=showFiltersButton
     RPA.Browser.Selenium.Input Text    xpath=/html/body/div[1]/div[3]/div[3]/div/div/div/div[1]/div/div[7]/div/div/div[2]/div[1]/div/div[1]/div/table/thead/tr[2]/th[3]/span/span/span[1]/input   PABLO SAURA
     RPA.Browser.Selenium.Press Keys    xpath=/html/body/div[1]/div[3]/div[3]/div/div/div/div[1]/div/div[7]/div/div/div[2]/div[1]/div/div[1]/div/table/thead/tr[2]/th[3]/span/span/span[1]/input       ENTER
-    RPA.Browser.Selenium.Wait Until Element Is Visible    css=td:nth-child(3)
+    RPA.Browser.Selenium.Wait Until Element Is Visible    css=td:nth-child(3)    55
     RPA.Browser.Selenium.Click Element    css=td:nth-child(3)
-    RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//*[contains(@id, 'btn-savePos')]
+    RPA.Browser.Selenium.Wait Until Element Is Visible    xpath=//*[contains(@id, 'btn-savePos')]    55
     RPA.Browser.Selenium.Click Element    xpath=//*[contains(@id, 'btn-savePos')]
     RPA.Browser.Selenium.Click Button    id=btn-save-send    
+  
 
 
 *** Tasks ***
