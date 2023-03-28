@@ -22,7 +22,7 @@ Leer PDF Y Extrae DNI
     Log    ${DNI}
     [Return]    ${DNI}
 Enviar por vidsigner
-    [Arguments]    ${DNI}
+    [Arguments]    ${DNI}   ${Email_Vid}    ${Pass_Vid}
     Open Chrome Browser    https://limcamar.send2sign.net    maximized=${True}
     RPA.Browser.Selenium.Input Text    id=email    ${Email_Vid}
     RPA.Browser.Selenium.Input Text    id=password    ${Pass_Vid}
@@ -53,10 +53,15 @@ Enviar por vidsigner
 *** Tasks ***
 Principal
     ${email}    Get Environment Variable        email
+    ${tennant}    Get Environment Variable        tennant
+    ${user}    Get Environment Variable        user
+    ${key}    Get Environment Variable        key
+    ${Email_Vid}    Get Environment Variable        Email_Vid
+    ${Pass_Vid}    Get Environment Variable        Pass_Vid
     Log     ${email}
     ${documento}=    Credenciales O365     ${CURDIR}    ${user}    ${key}    ${tennant}    ${email}
     ${DNI}=    Leer PDF Y Extrae DNI    Certificado_de_aprovechamiento-ESTELA_MARIA_RAINERO_GOMEZ.pdf
-    Enviar por vidsigner    ${DNI}
+    Enviar por vidsigner    ${DNI}   ${Email_Vid}    ${Pass_Vid}    
 
 
     
